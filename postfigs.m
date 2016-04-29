@@ -34,7 +34,7 @@ if strcmpi(fmt, 'asce')
         hAnnotChildren = get(hAnnotAxes,'Children');
         for i = 1:length(hAnnotChildren)
                 ha = hAnnotChildren(i);
-                set(ha, 'fontsize', 8)
+                set(ha, 'fontsize', 10)
                 set(ha, 'fontname', 'times new roman')
                 set(ha, 'headlength', 6)
                 set(ha, 'headwidth', 6)
