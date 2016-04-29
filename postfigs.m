@@ -4,7 +4,8 @@ function [] = postfigs( hfig, fmt)
 if strcmpi(fmt, 'asce')
     % typical figure size 3.5in (336 pixels)
     set(hfig, 'Position', [100, 100, 355, 266])
-    ax = get(hfig,'CurrentAxes');       
+    get(hfig,'CurrentAxes');   % not sure whether the first "get" give a diffent value
+    ax = get(hfig,'CurrentAxes');
     % change axis font
     set(ax,'fontsize',10);
     set(ax,'fontname','times new roman');
