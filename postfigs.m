@@ -1,4 +1,4 @@
-function [] = postfigs( hfig, fmt)
+function [] = postfigs( hfig, fmt, issave)
 % hfig: handle of fig
 % format: fig format
 if strcmpi(fmt, 'asce')
@@ -45,10 +45,14 @@ if strcmpi(fmt, 'asce')
     end
 
 end
-% save figures
-name = input('figure name:?', 's');
-set(hfig, 'paperpositionmode', 'auto');
-savefig(hfig, strcat('./fig/', name))
-print(strcat('./fig/', name),'-depsc')
+
+if issave == true
+    % save figures
+    name = input('figure name:?', 's');
+    set(hfig, 'paperpositionmode', 'auto');
+    savefig(hfig, strcat('./fig/', name))
+    print(strcat('./fig/', name),'-depsc')
+end
+
 end
 
