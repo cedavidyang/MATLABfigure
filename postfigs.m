@@ -3,9 +3,12 @@ function [] = postfigs( hfig, figsize, issave, ftsize)
 % format: fig format
 if strcmpi(num2str(figsize), 'asce')
     % typical figure size 3.5in (336 pixels)
-    set(hfig, 'Position', [100, 100, 336/0.75, 336])
+    set(hfig, 'Units', 'pixels')
+    set(hfig, 'Position', [100, 100, 336, 336*0.75])
 else
-    set(hfig, 'Position', [100, 100, figsize/0.75, figsize])
+%     set(hfig, 'Position', [100, 100, figsize, figsize*0.75])
+    set(hfig, 'Units', 'inches')
+    set(hfig, 'Position', [2, 2, figsize, figsize*0.75])
 end
 get(hfig,'CurrentAxes');   % not sure whether the first "get" give a diffent value
 ax = get(hfig,'CurrentAxes');
