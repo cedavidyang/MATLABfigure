@@ -5,10 +5,13 @@ if strcmpi(num2str(figsize), 'asce')
     % typical figure size 3.5in (336 pixels)
     set(hfig, 'Units', 'pixels')
     set(hfig, 'Position', [100, 100, 336, 336*0.75])
-else
+elseif length(figsize) == 1
 %     set(hfig, 'Position', [100, 100, figsize, figsize*0.75])
     set(hfig, 'Units', 'inches')
     set(hfig, 'Position', [2, 2, figsize, figsize*0.75])
+elseif length(figsize) == 2
+    set(hfig, 'Units', 'inches')
+    set(hfig, 'Position', [2, 2, figsize(1), figsize(2)])    
 end
 get(hfig,'CurrentAxes');   % not sure whether the first "get" give a diffent value
 ax = get(hfig,'CurrentAxes');
