@@ -17,24 +17,24 @@ get(hfig,'CurrentAxes');   % not sure whether the first "get" give a diffent val
 ax = get(hfig,'CurrentAxes');
 % change axis font
 set(ax,'fontsize',ftsize);
-set(ax,'fontname','times new roman');
+set(ax,'fontname','Arial');
 % change label font
 try
     xlb = get(ax, 'xlabel');
-    set(xlb, 'fontsize', ftsize, 'Fontname', 'times new roman');
+    set(xlb, 'fontsize', ftsize, 'Fontname', 'Arial');
 catch
     disp 'no xlabel';
 end
 try
     ylb = get(ax, 'ylabel');
-    set(ylb, 'fontsize', ftsize, 'Fontname', 'times new roman');
+    set(ylb, 'fontsize', ftsize, 'Fontname', 'Arial');
 catch
     disp 'no ylabel';
 end
 % change legend font
 lgd = legend(ax);
 try
-    set(lgd, 'fontsize', ftsize, 'fontname', 'times new roman');
+    set(lgd, 'fontsize', ftsize, 'fontname', 'Arial');
 catch
     disp 'no legend';
 end
@@ -45,7 +45,7 @@ try
     for i = 1:length(hAnnotChildren)
         ha = hAnnotChildren(i);
         set(ha, 'fontsize', ftsize)
-        set(ha, 'fontname', 'times new roman')
+        set(ha, 'fontname', 'Arial')
         set(ha, 'headlength', 6)
         set(ha, 'headwidth', 6)
     end
